@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -21,6 +20,7 @@ var Todo = db.model('todos', TodoSchema);
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
+app.set('title', 'Git Er Done!!');
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
@@ -36,7 +36,6 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index(Todo));
 app.get('/users', user.list);
 app.get('/todos.json', routes.get(Todo));
-
 app.put('/todo/:id.json', routes.update(Todo));
 
 

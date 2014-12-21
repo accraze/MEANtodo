@@ -36,11 +36,13 @@ function TodoListController($scope, $http, $timeout) {
   }, 30 * 60 * 1000); // update every 30 minutes;
 
   $scope.updateList();
+  
   $scope.addNewTodo = function() {
     $http.post('/todo.json', $scope.newTodo).success(function(data) {
       if (data.todo) {
         $scope.todos.push(data.todo);
         $scope.newTodo.description = '';
+
       } else {
         alert(JSON.stringify(data));
       }
