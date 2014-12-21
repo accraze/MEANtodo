@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "0.10"
+services:
+  - mongodb
+env:
+  global:
+    - NODE_ENV=travisci
+    - BUILD_DIR=`pwd`/accraze
+before_script:
+  - npm install -g grunt-cli
+  - npm install -g nodeunit
+  - npm install -g bower
+  - bower install
+  - npm install

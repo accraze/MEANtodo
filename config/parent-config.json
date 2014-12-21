@@ -1,0 +1,25 @@
+  module.exports = function (mainDir, cwd) {
+    'use strict';
+
+    if (!cwd) {
+        cwd = '';
+    }
+
+    return {
+        basePath: cwd + mainDir,
+      
+        Default: {
+            projRoot: cwd + mainDir,
+            serverRoot: cwd + mainDir,
+            testRoot: cwd + mainDir + 'nodeunit'
+        },
+        database: {
+            host: "localhost",
+            port: 27017,
+            name: "mytestapp"
+        },
+        server: {
+            port: 3000
+        }
+    };
+};
