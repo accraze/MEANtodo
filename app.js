@@ -20,7 +20,7 @@ var Todo = db.model('todos', TodoSchema);
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
-app.set('title', 'Git Er Done!!');
+app.set('title', 'DO-IT');
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
