@@ -20,7 +20,7 @@ var Todo = db.model('todos', TodoSchema);
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
-app.set('title', 'DO-IT');
+app.set('title', 'Do YR Work');
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
@@ -37,6 +37,8 @@ app.get('/', routes.index(Todo));
 app.get('/users', user.list);
 app.get('/todos.json', routes.get(Todo));
 app.put('/todo/:id.json', routes.update(Todo));
+app.delete('/todo/:id.json', routes.delete(Todo));
+
 
 
 app.post('/todo.json', routes.addTodo(Todo));

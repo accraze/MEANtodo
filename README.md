@@ -1,4 +1,4 @@
-Git-Er-Done: A Productivity App <img src="https://travis-ci.org/accraze/MEANtodo.svg?branch=master"/>
+Do YR Work: A Productivity App <img src="https://travis-ci.org/accraze/MEANtodo.svg?branch=master"/>
 ===========================================================================================
 ###Productivity App writing using a MEAN (MongoDb/Express/AngularJS/Node.js) stack.
 

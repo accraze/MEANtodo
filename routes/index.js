@@ -7,7 +7,7 @@ exports.index = function(Todo) {
   return function(req, res) {
     Todo.find({}, function(error, todos) {
       res.render('index', {
-        title: 'Express',
+        title: 'Do YR Work',
         todos : todos
       });
     });
@@ -53,3 +53,18 @@ exports.update = function(Todo) {
     });
   }
 };
+
+exports.delete = function(Todo) {
+  return function(req,res) {
+    Todo.remove({_id: req.params.id}, function(error, todo) {
+      if(error || !todo) {
+        res.json({error: error + 'FUCK U'});
+      }
+
+      //get and return all the todos after deleting one...
+      Todo.find({}, function(error, todos) {
+        res.json(todos);
+      });           
+  });
+  }
+}

@@ -21,6 +21,16 @@ function TodoListController($scope, $http, $timeout) {
     });
   };
 
+  $scope.deleteTodo = function(id) {
+   $http.delete('/todo/' + id + '.json', todo).success(function(data) {
+      $scope.todos = data;
+      console.log(data);
+    })
+   .error(function(data) {
+    console.log('Error: ' + data);
+   })
+  };
+
   $scope.updateList = function() {
     $http.get('/todos.json').success(function(data) {
       $scope.todos = data.todos;
