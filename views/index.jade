@@ -10,31 +10,44 @@ block head
 block content
 
   div.container(ng-controller="TodoListController", ng-init="setTodos( #{JSON.stringify(todos)} )")
-    h1 Git Er Done 
-    h2 Add New
-    form(novalidate, ng-submit="addNewTodo()")
-      textarea( ng-model="newTodo.description",
-                placeholder="Description")
-      br
-      div(ng-model="newTodo.due")
-        datepicker()
-      br
-      button.btn.btn-primary(type="submit") Add Todo
-    h2 Upcoming
-    div
-      div.row.todo.not-done(ng-repeat="todo in todos | filter:notDoneFilter")
-        div.span9
-          label.checkbox
-            input(type="checkbox", ng-model="todo.done", ng-change="update(todo)")
-            | {{todo.description}}
-        div.span3.text-right
-          i {{todo.due | date:'MMM d, yyyy'}}
-    h2 Done
-    div
-      div.row.todo.done(ng-repeat="todo in todos | filter:doneFilter")
-        div.span9
-          label.checkbox
-            input(type="checkbox", ng-model="todo.done", ng-change="update(todo)")
-            del {{todo.description}}
-        div.span3.text-right
-          i {{todo.due | date:'MMM d, yyyy'}}
+    div.col-md-6.todolist
+      h1 DO YR WORK
+      hr
+      form(novalidate, ng-submit="addNewTodo()" align="center")
+        textarea( ng-model="newTodo.description",
+                  placeholder="What Do You Need To Do?" style="width: 50% !important;")
+        br
+        br
+        div(ng-model="newTodo.due" align="center")
+          h4 When do you need it done by?
+          datepicker()
+        br
+        hr
+        button.btn.btn-success(type="submit") Add Task
+    div.col-md-5.todolist.not-done
+      h2 Need to Do
+      hr
+      div
+        div.row.todo.not-done(ng-repeat="todo in todos | filter:notDoneFilter")
+          div.span9
+            label.checkbox
+              input(type="checkbox", ng-model="todo.done", ng-change="update(todo)")
+              | {{todo.description}}
+          div.span3.text-right
+            i {{todo.due | date:'MMM d, yyyy'}}
+          button.remove-item.btn.btn-default.btn-xs.pull-right
+            span.glyphicon.glyphicon-remove
+      div.todo-footer
+        span.count-todos
+          {{(todos | filter:notDoneFilter).length}} Tasks Left
+    div.col-md-5.todolist
+      h2 Done
+      hr
+      div
+        div.row.todo.done(ng-repeat="todo in todos | filter:doneFilter")
+          div.span9
+            label.checkbox
+              input(type="checkbox", ng-model="todo.done", ng-change="update(todo)")
+              del {{todo.description}}
+          div.span3.text-right
+            i {{todo.due | date:'MMM d, yyyy'}}
