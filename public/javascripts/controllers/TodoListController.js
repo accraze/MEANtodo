@@ -21,8 +21,8 @@ function TodoListController($scope, $http, $timeout) {
     });
   };
 
-  $scope.deleteTodo = function(id) {
-   $http.delete('/todo/' + id + '.json', todo).success(function(data) {
+  $scope.deleteTodo = function(todo) {
+   $http.delete('/todo/' + todo._id + '.json', todo).success(function(data) {
       $scope.todos = data;
       console.log(data);
     })
@@ -54,7 +54,7 @@ function TodoListController($scope, $http, $timeout) {
         $scope.newTodo.description = '';
 
       } else {
-        alert(JSON.stringify(data));
+        alert('ERROR!! ' + JSON.stringify(data));
       }
     });
   };

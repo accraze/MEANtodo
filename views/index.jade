@@ -13,9 +13,9 @@ block content
     div.col-md-6.todolist
       h1 DO YR WORK
       hr
-      form(novalidate, ng-submit="addNewTodo()" align="center")
+      form(ng-submit="addNewTodo()" align="center")
         textarea( ng-model="newTodo.description",
-                  placeholder="What Do You Need To Do?" style="width: 50% !important;")
+                  placeholder="What Do You Need To Do?" style="width: 50% !important;", required)
         br
         br
         div(ng-model="newTodo.due" align="center")
@@ -37,6 +37,7 @@ block content
             i {{todo.due | date:'MMM d, yyyy'}}
           button.remove-item.btn.btn-default.btn-xs.pull-right(ng-click="deleteTodo(todo);")
             span.glyphicon.glyphicon-remove
+          hr
       div.todo-footer
         span.count-todos
           {{(todos | filter:notDoneFilter).length}} Tasks Left
@@ -47,7 +48,9 @@ block content
         div.row.todo.done(ng-repeat="todo in todos | filter:doneFilter")
           div.span9
             label.checkbox
-              input(type="checkbox", ng-model="todo.done", ng-change="update(todo._id)")
+              input(type="checkbox", ng-model="todo.done", ng-change="update(todo)")
               del {{todo.description}}
           div.span3.text-right
             i {{todo.due | date:'MMM d, yyyy'}}
+          button.remove-item.btn.btn-default.btn-xs.pull-right(ng-click="deleteTodo(todo);")
+            span.glyphicon.glyphicon-remove

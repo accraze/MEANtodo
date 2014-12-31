@@ -1,6 +1,8 @@
 {
-  "name": "getErDone",
-  "version": "0.0.1",
+  "name": "doYrWork",
+  "version": "1.0.1",
+   "description": "Simple productivity app that allows you to DO YR WORK",
+  "author": "Andrew Craze <accraze@gmail.com>",
   "private": true,
   "scripts": {
     "start": "node app.js",
@@ -11,6 +13,10 @@
     "jade": "*",
     "mongodb": ">=0.9.6-7",
     "mongoose": ">=3.6"
+  },
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/accraze/doYrWork"
   },
   "devDependencies": {
     "nodeunit": "^0.9.0"
