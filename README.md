@@ -1,11 +1,11 @@
-Do YR Work: <img src="https://travis-ci.org/accraze/doYrWork.svg?branch=master"/>
+Do YR Work: <a href="https://travis-ci.org/accraze/doYrWork" target="_blank"><img src="https://travis-ci.org/accraze/doYrWork.svg?branch=master"/></a>
 ===========================================================================================
 ####Simple productivity app written using a MEAN (MongoDb/Express/AngularJS/Node.js) stack.
 
 Sometimes half of the battle is just getting started. Having the ability to organize your
 thoughts and tasks by due date can eliminate the mental chaos of juggling everything at once.
 
-Do yourself a favor, and **DO YR WORK**.
+<img src="assets/img/doyrwork"/>
 
 
 ##Try it out:
