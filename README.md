@@ -5,7 +5,7 @@ Do YR Work: <a href="https://travis-ci.org/accraze/doYrWork" target="_blank"><im
 Sometimes half of the battle is just getting started. Having the ability to organize your
 thoughts and tasks by due date can eliminate the mental chaos of juggling everything at once.
 
-<img src="assets/img/doyrwork"/>
+<img src="assets/img/doyrwork.jpg"/>
 
 
 ##Try it out:
